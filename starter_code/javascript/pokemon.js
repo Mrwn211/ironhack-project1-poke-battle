@@ -1,14 +1,16 @@
+//TODO: créer les pokemons individuels en variable 
+
 // Attacks
 
 var attacksName = ["scratch","kick","smash","head charge"];
 
 var sounds = [];
 
-function Attacks(attacksName,sound,damage) {
-  this.name = attacksName[i];
-  this.sound = sound[i];
-  this.damage = damage;
-};
+//function Attacks(attacksName,sound,damage) {
+//  this.name = attacksName[i];
+//  this.sound = sound[i];
+//  this.damage = damage;
+//};
 
 // Pokemon Constructor
 
@@ -17,12 +19,12 @@ function Pokemon(name,health,sprite,attacksName,attack){
   this.health = health;
   this.sprite = sprite;
   this.attacks = attacksName;
-  this.attack = function (){
-    return this.health
-  };
-  this.receiveDamage = function(damage){
-    this.health =- damage;
-  }
+  //this.attack = function (){
+  //  return this.health
+  //};
+  //this.receiveDamage = function(damage){
+  //  this.health -= damage;
+  //}
   this.attackCry = function(){
     // Specify the attack ??
     return name + " has chossen to attack"
@@ -42,7 +44,7 @@ Pokemon.prototype.receiveDamage = function(health,damage){
 
 
 // Pokemon Instances
-
+// chaque pokemon est une variable ex var pikachu = new pokemon (avec le name et le health etc.)
 Pikachu.prototype = Object.create(Pokemon.prototype);
 Pikachu.prototype.constructor = Pikachu;
 
