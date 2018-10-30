@@ -34,7 +34,6 @@ header {
   height: 120px;
   width: 120px;
   margin-bottom: 4%;
-
 }
 
 #characters-wrapper {
@@ -45,8 +44,11 @@ header {
 
 .characters {
   display: flex;
-  border: solid 2px;
-  border-color: red;
   max-width: 20%;
   float: left;
+}
+
+.selected-char {
+  border: solid 2px;
+  border-color: aqua;
 }
