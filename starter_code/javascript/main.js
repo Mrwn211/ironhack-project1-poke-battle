@@ -56,4 +56,22 @@ $(document).ready(function() {
     }
     console.log("event ended");
   });
+
+ $(document).keydown(function(event) {
+ if (event.keyCode === 13) {
+   if (selectedId === "#pikachu.characters"){
+    $('#player1').html('<img src="..//elements/avatars/pikachu.png" />');
+   }
+   else if (selectedId === "#charmander.characters"){
+    $('#player1').html('<img src="..//elements/avatars/charmander.png" />');
+   }
+   else if (selectedId === "#squirtle.characters"){
+    $('#player1').html('<img src="..//elements/avatars/squirtle.png" />');
+   }
+   else if (selectedId === "#bulbasaur.characters"){
+    $('#player1').html('<img src="..//elements/avatars/bulbasaur.png" />');
+   }
+  }
+  });
+ 
 }); // fin du document.ready
