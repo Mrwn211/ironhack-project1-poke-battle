@@ -77,12 +77,12 @@ $(document).ready(function() {
   });
 
   function randomSelect(){
-    var randomIndex = Math.floor(Math.random() * (characters.length - 1));
-    while (randomIndex == selectedId) {
-     randomIndex = Math.floor(Math.random() * (characters.length - 1));
+    var randomIndex = Math.floor(Math.random() * (characters.length));
+    while (randomIndex == currentCharIndex) {
+     randomIndex = Math.floor(Math.random() * (characters.length));
     }
     console.log("randomIndex is " + randomIndex)
-    if (randomIndex !== selectedId){
+    if (randomIndex !== currentCharIndex){
       var opponentId = "#" + characters[randomIndex] + ".characters";
       console.log("opponentId is " + opponentId)
       if (opponentId === "#pikachu.characters"){
