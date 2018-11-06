@@ -1,11 +1,12 @@
+var characters = ["pikachu", "charmander", "squirtle", "bulbasaur"];
+var currentCharIndex = 0;
+//var selectedId = "#" + characters[currentCharIndex] + ".characters";
+var selectedId;
 $(document).ready(function() {
   console.log("ready!");
 
   $("#pikachu.characters").addClass("selected-char");
-  var characters = ["pikachu", "charmander", "squirtle", "bulbasaur"];
-  var currentCharIndex = 0;
-  //var selectedId = "#" + characters[currentCharIndex] + ".characters";
-  var selectedId;
+  
 
   $(document).keydown(function(event) {
     console.log("event initiated");
@@ -71,7 +72,33 @@ $(document).ready(function() {
    else if (selectedId === "#bulbasaur.characters"){
     $('#player1').html('<img src="..//elements/avatars/bulbasaur.png" />');
    }
+   randomSelect();
   }
   });
+
+  function randomSelect(){
+    var randomIndex = Math.floor(Math.random() * (characters.length - 1));
+    while (randomIndex == selectedId) {
+     randomIndex = Math.floor(Math.random() * (characters.length - 1));
+    }
+    console.log("randomIndex is " + randomIndex)
+    if (randomIndex !== selectedId){
+      var opponentId = "#" + characters[randomIndex] + ".characters";
+      console.log("opponentId is " + opponentId)
+      if (opponentId === "#pikachu.characters"){
+        $('#computer').html('<img src="..//elements/avatars/pikachu.png" />');
+       }
+       else if (opponentId === "#charmander.characters"){
+        $('#computer').html('<img src="..//elements/avatars/charmander.png" />');
+       }
+       else if (opponentId === "#squirtle.characters"){
+        $('#computer').html('<img src="..//elements/avatars/squirtle.png" />');
+       }
+       else if (opponentId === "#bulbasaur.characters"){
+        $('#computer').html('<img src="..//elements/avatars/bulbasaur.png" />');
+       } 
+    }
+  };
+
  
 }); // fin du document.ready
