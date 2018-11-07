@@ -2,9 +2,6 @@
   font-family: "pokefont";
   src:url("../elements/font/PokemonGB.ttf");
 }
-p.customfont { 
-  font-family: "My Custom Font", Verdana, Tahoma;
-}
 
 header {
   position: relative;
@@ -65,7 +62,6 @@ font-size: 1em;
 }
 
 .characters {
-  /* display: flex; */
   max-width: 20%;
   float: left;
 }

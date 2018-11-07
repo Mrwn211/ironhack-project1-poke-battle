@@ -98,7 +98,11 @@ $(document).ready(function() {
         $('#computer').html('<img src="..//elements/avatars/bulbasaur.png" />');
        } 
     }
+    setTimeout (battlescene, 2000);
   };
 
+  function battlescene () {
+    window.location.href = "battlescene.html"
+  };
  
 }); // fin du document.ready
