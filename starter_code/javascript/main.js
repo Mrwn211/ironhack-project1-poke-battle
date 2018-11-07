@@ -74,6 +74,8 @@ var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharI
   }
   });
 
+  // utiliser cette fonction ? ou recalculer le randomindex à chaque fleche dans le switch ???
+  // cette fonction pourrait ne servir qu'à l'image de l'opponent
   function randomSelect(){
     var randomIndex = Math.floor(Math.random() * (characters.length));
     while (randomIndex == currentCharIndex) {
@@ -84,11 +86,13 @@ var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharI
       console.log("image of the oponent is " + opponentImg);
       $('#computer').html(opponentImg);
     }
-    //setTimeout (battlescene, 2000);
+    //setTimeout (battlescene, 1000);
   };
 
-  function battlescene () {
-    window.location.href = "battlescene.html"
-  };
+  //function battlescene () {
+  //  window.location.href = "battlescene.html";
+  //  $('battlescene.html').load(".box-bottom-left").html(player1Img).addClass('pokemon-bottom');
+  //  $('battlescene.html').load(".box-top-right").html(opponentImg).addClass('pokemon-top');
+  //};
  
 }); // fin du document.ready
