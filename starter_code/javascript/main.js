@@ -1,7 +1,14 @@
 var characters = ["pikachu", "charmander", "squirtle", "bulbasaur"];
 var currentCharIndex = 0;
-//var selectedId = "#" + characters[currentCharIndex] + ".characters";
-var selectedId;
+var randomIndex = Math.floor(Math.random() * (characters.length));
+var selectedId = "#" + characters[currentCharIndex] + ".characters";
+var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
+var opponentImg = "<img src=" + "..//elements/avatars/" + characters[randomIndex] + ".png />";
+console.log(currentCharIndex);
+console.log(player1Img);
+console.log(randomIndex);
+console.log(opponentImg);
+
 $(document).ready(function() {
   console.log("ready!");
 
@@ -59,19 +66,10 @@ $(document).ready(function() {
   });
 
  $(document).keydown(function(event) {
+var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
  if (event.keyCode === 13) {
-   if (selectedId === "#pikachu.characters"){
-    $('#player1').html('<img src="..//elements/avatars/pikachu.png" />');
-   }
-   else if (selectedId === "#charmander.characters"){
-    $('#player1').html('<img src="..//elements/avatars/charmander.png" />');
-   }
-   else if (selectedId === "#squirtle.characters"){
-    $('#player1').html('<img src="..//elements/avatars/squirtle.png" />');
-   }
-   else if (selectedId === "#bulbasaur.characters"){
-    $('#player1').html('<img src="..//elements/avatars/bulbasaur.png" />');
-   }
+   console.log("image of the player is " + player1Img)
+  $('#player1').html(player1Img);
    randomSelect();
   }
   });
@@ -83,22 +81,10 @@ $(document).ready(function() {
     }
     console.log("randomIndex is " + randomIndex)
     if (randomIndex !== currentCharIndex){
-      var opponentId = "#" + characters[randomIndex] + ".characters";
-      console.log("opponentId is " + opponentId)
-      if (opponentId === "#pikachu.characters"){
-        $('#computer').html('<img src="..//elements/avatars/pikachu.png" />');
-       }
-       else if (opponentId === "#charmander.characters"){
-        $('#computer').html('<img src="..//elements/avatars/charmander.png" />');
-       }
-       else if (opponentId === "#squirtle.characters"){
-        $('#computer').html('<img src="..//elements/avatars/squirtle.png" />');
-       }
-       else if (opponentId === "#bulbasaur.characters"){
-        $('#computer').html('<img src="..//elements/avatars/bulbasaur.png" />');
-       } 
+      console.log("image of the oponent is " + opponentImg);
+      $('#computer').html(opponentImg);
     }
-    setTimeout (battlescene, 2000);
+    //setTimeout (battlescene, 2000);
   };
 
   function battlescene () {
