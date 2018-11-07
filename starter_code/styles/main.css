@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "pokefont";
+  src:url("../elements/font/PokemonGB.ttf");
+}
+p.customfont { 
+  font-family: "My Custom Font", Verdana, Tahoma;
+}
+
 header {
   position: relative;
 }
@@ -7,8 +15,22 @@ header {
   justify-content: center; 
   align-items: center;
   margin: auto;
+  margin-bottom: 0%;
   max-width: 60%;
-  max-height: 300px;
+  max-height: 250px;
+}
+
+.instructions {
+  text-align: center;
+  margin-bottom: 0px;
+  font-family: "pokefont";
+  font-size: 1em;
+}
+
+.pokename {
+font-family: "pokefont";
+
+font-size: 1em;
 }
 
 .clearfix {
@@ -43,12 +65,12 @@ header {
 }
 
 .characters {
-  display: flex;
+  /* display: flex; */
   max-width: 20%;
   float: left;
 }
 
 .selected-char {
   border: solid 2px;
-  border-color: aqua;
+  border-color: red;
 }
