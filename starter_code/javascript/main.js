@@ -11,6 +11,9 @@ console.log(opponentImg);
 
 $(document).ready(function() {
   console.log("ready!");
+  
+  $("#chosse-screen").css("display","block");
+  $("#battle-scene").css("display","none");
 
   $("#pikachu.characters").addClass("selected-char");
   
@@ -89,11 +92,13 @@ var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharI
     setTimeout (battlescene, 1000);
   };
 
+
+
   function battlescene () {
-    $("#chosse-screen").hide();
-    $("#battle-scene").show();
-    $(".box-bottom-left").html(player1Img).addClass('pokemon-bottom');
-    $(".box-top-right").html(opponentImg).addClass('pokemon-top');
+    $("#choose-screen").css("display","none");
+    $("#battle-scene").css("display","block");
+    $(".box-bottom-left").html(player1Img)//.addClass('pokemon-bottom');
+    $(".box-top-right").html(opponentImg)//.addClass('pokemon-top');
   };
  
 }); // fin du document.ready

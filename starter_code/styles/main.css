@@ -4,7 +4,7 @@
 }
 
 header {
-  /* position: relative; */
+  position: relative; 
 }
 
 .logo {
@@ -162,15 +162,15 @@ body {
   height: 150%;
   width: 50%;
   position: absolute;
-  top: -80%;
-  left: 25%;
+  top: 26%;
+  left: 50%;
 }
 
 .pokemon-bottom{
   height: 150%;
-  width: 50%;
+  width: 41%;
   position: absolute;
-  top: -75%;
+  top: -60%;
   left: 25%;
 }
 
@@ -266,9 +266,9 @@ body {
 .battle-text-top-left{
   opacity: 0.95;
   position: absolute;
-  font-size: 22px;
+  font-size: 12px;
   color: #333333;
-  top: -30%;
+  top: -20%;
   left: 10%;
   text-align: left;
   font-family: "pokefont";
@@ -278,9 +278,9 @@ body {
 .battle-text-bottom-left{
   opacity: 0.95;
   position: absolute;
-  font-size: 22px;
+  font-size: 12px;
   color: #333333;
-  bottom: -30%;
+  bottom: -20%;
   left: 10%;
   text-align: left;
   font-family: "pokefont";
@@ -290,9 +290,9 @@ body {
 .battle-text-top-right{
   opacity: 0.95;
   position: absolute;
-  font-size: 22px;
+  font-size: 12px;
   color: #333333;
-  top: -30%;
+  top: -20%;
   right: 21%;
   text-align: left;
   font-family: "pokefont";
@@ -302,9 +302,9 @@ body {
 .battle-text-bottom-right{
   opacity: 0.95;
   position: absolute;
-  font-size: 22px;
+  font-size: 12px;
   color: #333333;
-  bottom: -30%;
+  bottom: -20%;
   right: 20%;
   text-align: left;
   font-family: "pokefont";

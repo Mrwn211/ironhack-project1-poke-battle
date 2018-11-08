@@ -11,10 +11,9 @@
       media="screen"
       href="../styles/main.css"
     />
-    <link rel="stylesheet" type="text/css" href="../styles/battlescene.css" />
   </head>
   <body>
-    <div id="choose-screen" class="shown">
+    <div id="choose-screen">
         <img
         class="logo"
         src="..//elements/img/logo-pokemon.png"
@@ -49,28 +48,29 @@
       </div>
     </div>
     <!-- Begin battle scene -->
-    <div id="battle-scene" class="hidden">
+    <div id="battle-scene">
       <h1 class="title">Pokemon Battle</h1>
 
       <div class="battle-scene">
         <div class="box-top-left">
           <h2 class="pokemon"></h2>
           <div class="hp-bar-top"><div class="hp-bar-fill"></div></div>
+          <h4 class="hp"><p>100</p></h4>
         </div>
         <div class="box-top-right"><!-- Integrate OpponentImg --></div>
         <div class="box-bottom-left"><!-- Integrate player1Img --></div>
         <div class="box-bottom-right">
           <h2 class="pokemon"></h2>
           <div class="hp-bar-bottom"><div class="hp-bar-fill"></div></div>
-          <h4 class="hp"></h4>
+          <h4 class="hp"><p>100</p></h4>
         </div>
         <div class="bottom-menu">
           <div class="battle-text text-box-left"></div>
           <div class="text-box-right">
-            <h4 class="battle-text-top-left"></h4>
-            <h4 class="battle-text-bottom-left"></h4>
-            <h4 class="battle-text-top-right"></h4>
-            <h4 class="battle-text-bottom-right"></h4>
+            <h4 class="battle-text-top-left">scratch</h4>
+            <h4 class="battle-text-bottom-left">kick</h4>
+            <h4 class="battle-text-top-right">smash</h4>
+            <h4 class="battle-text-bottom-right">charge</h4>
           </div>
         </div>
       </div>
