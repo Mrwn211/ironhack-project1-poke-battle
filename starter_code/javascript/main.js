@@ -86,13 +86,14 @@ var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharI
       console.log("image of the oponent is " + opponentImg);
       $('#computer').html(opponentImg);
     }
-    //setTimeout (battlescene, 1000);
+    setTimeout (battlescene, 1000);
   };
 
-  //function battlescene () {
-  //  window.location.href = "battlescene.html";
-  //  $('battlescene.html').load(".box-bottom-left").html(player1Img).addClass('pokemon-bottom');
-  //  $('battlescene.html').load(".box-top-right").html(opponentImg).addClass('pokemon-top');
-  //};
+  function battlescene () {
+    $("#chosse-screen").hide();
+    $("#battle-scene").show();
+    $(".box-bottom-left").html(player1Img).addClass('pokemon-bottom');
+    $(".box-top-right").html(opponentImg).addClass('pokemon-top');
+  };
  
 }); // fin du document.ready

@@ -20,6 +20,14 @@ body {
   font-family: "pokefont";
 }
 
+.hidden {
+  display: none;
+}
+
+.shown {
+  display:block;
+}
+
 .battle-scene{
   position: relative;
   margin: auto;
