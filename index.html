@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>IronPokeBattle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./styles/main.css"
+    />
+  </head>
+  <body>
+    <div id="choose-screen">
+        <img
+        class="logo"
+        src="./elements/img/logo-pokemon.png"
+        alt="Pokemon logo"
+      />
+      <div class="instructions">
+        <p>
+          Choose your pokemon using left and right arrows and press enter to
+          validate. Your opponent will be automatically designated !
+        </p>
+      </div>
+      <div id="player1"></div>
+      <div id="computer"></div>
+      <div class="clearfix"></div>
+      <div id="characters-wrapper">
+        <figure class="characters" id="pikachu">
+          <img src="./elements/avatars/pikachu.png" alt="pikachu" />
+          <figcaption class="pokename">Pikachu</figcaption>
+        </figure>
+        <figure class="characters" id="charmander">
+          <img src="./elements/avatars/charmander.png" alt="charmander" />
+          <figcaption class="pokename">Charmander</figcaption>
+        </figure>
+        <figure class="characters" id="squirtle">
+          <img src="./elements/avatars/squirtle.png" alt="squirtle" />
+          <figcaption class="pokename">Squirtle</figcaption>
+        </figure>
+        <figure class="characters" id="bulbasaur">
+          <img src="./elements/avatars/bulbasaur.png" alt="bulbasaur" />
+          <figcaption class="pokename">Bulbasaur</figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- Begin battle scene -->
+    <div id="battle-scene">
+      <h1 class="title">Pokemon Battle</h1>
+
+      <div class="battle-scene">
+        <div class="box-top-left">
+          <h2 class="pokemon"></h2>
+          <div class="hp-bar-top"><div class="hp-bar-fill"></div></div>
+          <h4 class="hp"><p>100</p></h4>
+        </div>
+        <div class="box-top-right"><!-- Integrate OpponentImg --></div>
+        <div class="box-bottom-left"><!-- Integrate player1Img --></div>
+        <div class="box-bottom-right">
+          <h2 class="pokemon"></h2>
+          <div class="hp-bar-bottom"><div class="hp-bar-fill"></div></div>
+          <h4 class="hp"><p>100</p></h4>
+        </div>
+        <div class="bottom-menu">
+          <div class="battle-text text-box-left"></div>
+          <div class="text-box-right">
+            <h4 class="battle-text-top-left" id="scratch">scratch</h4>
+            <h4 class="battle-text-bottom-left" id="kick">smash</h4>
+            <h4 class="battle-text-top-right" id="smash">kick</h4>
+            <h4 class="battle-text-bottom-right" id="charge">charge</h4>
+          </div>
+        </div>
+      </div>
+      <!-- end battle scene -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./javascript/pokemon.js"></script>
+    <script src="./javascript/main.js"></script>
+  </body>
+</html>
+<!--
+  Template of the battlescene from Mike Mangialardi https://codepen.io/mikemang/pen/rjKaGW
+-->

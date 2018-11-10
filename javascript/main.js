@@ -2,9 +2,9 @@ var characters = ["pikachu", "charmander", "squirtle", "bulbasaur"];
 var currentCharIndex = 0;
 var randomIndex = Math.floor(Math.random() * (characters.length));
 var selectedId = "#" + characters[currentCharIndex] + ".characters";
-var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
+var player1Img = "<img src=" + "./elements/avatars/" + characters[currentCharIndex] + ".png />";
 // var player1Img;
-var opponentImg = "<img src=" + "..//elements/avatars/" + characters[randomIndex] + ".png />";
+var opponentImg = "<img src=" + "./elements/avatars/" + characters[randomIndex] + ".png />";
 // var opponentImg;
 console.log("currentCharIndex is at the start " + currentCharIndex);
 console.log(player1Img);
@@ -46,7 +46,7 @@ $(document).ready(function() {
           $(selectedId).addClass("selected-char");
         }
         currentCharIndex -= 1;
-        player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
+        player1Img = "<img src=" + "./elements//avatars/" + characters[currentCharIndex] + ".png />";
         selectedId = "#" + characters[currentCharIndex] + ".characters";
         console.log("selectedId is " + selectedId);
         if ($(selectedId).hasClass("selected-char")) {
@@ -69,7 +69,7 @@ $(document).ready(function() {
           $(selectedId).addClass("selected-char");
         }
         currentCharIndex += 1;
-        player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
+        player1Img = "<img src=" + "./elements//avatars/" + characters[currentCharIndex] + ".png />";
         selectedId = "#" + characters[currentCharIndex] + ".characters";
         console.log("selectedId is " + selectedId);
         if ($(selectedId).hasClass("selected-char")) {
