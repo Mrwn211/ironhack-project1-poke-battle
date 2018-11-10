@@ -12,19 +12,22 @@ function Pokemon(name,health,avatar,sound){
 
 Pokemon.prototype.attack = function(pokemon){
   var damage = Math.floor(Math.random() * (pokemon.health));
+  if (pokemon.health === 1) {
+    damage = 1
+  };
   pokemon.health -= damage;
   var audio = new Audio(this.sound);
   audio.play(); 
+  console.log(damage,pokemon.health);
   if (pokemon.health > 1){
     console.log(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health);
     $(".battle-text").html(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health)
 }
-    else if (pokemon.health === 1 ) {
-      damage = 1;
-      console.log(pokemon.name + "has lost the battle!");
-      $(".battle-text").html(pokemon.name + " has lost the battle!");
-    }
-    
+  else if (pokemon.health === 0) {
+    console.log(pokemon.name + " has lost the battle!");
+    $(".battle-text").html(pokemon.name + " has lost the battle!");
+    return
+  }
 };
 
 // Pokemon Instances
