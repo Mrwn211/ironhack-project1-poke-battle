@@ -1,9 +1,4 @@
-// Attacks
-
-var attacksName = ["scratch","kick","smash","head charge"];
-
 // Pokemon Constructor
-
 function Pokemon(name,health,avatar,sound){
   this.name = name;
   this.health = health;
@@ -20,17 +15,21 @@ Pokemon.prototype.attack = function(pokemon){
   pokemon.health -= damage;
   var audio = new Audio(this.sound);
   audio.play(); 
-  if (pokemonhis.health > 0){
-    return pokemon.name + " has received " + damage + " points of damage";
+  if (pokemon.health > 1){
+    console.log(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health);
 }
-    else pokemon.name + "has lost the battle!";
+    else if (pokemon.health === 1 ) {
+      damage = 1;
+      console.log(pokemon.name + "has lost the battle!");
+    }
+    
 };
-
-// Pokemon.prototype.attack = function // A définir
 
 // Pokemon Instances
 
-var pikachu = new Pokemon ("Pikachu",100,"../elements/sprites/pikachu.png","../elements/sounds/Pikachu-attack-sound.mp3");
-var charmander = new Pokemon("Charmander",100,"../elements/sprites/charmander.png","../elements/sounds/Charmander-attack-sound.mp3");
-var bulbasaur = new Pokemon ("Bulbasaur",100,"../elements/sprites/squirtle.png","../elements/sounds/Bulbasaur-attack-sound.mp3");
-var squirtle = new Pokemon("Squirtle",100,"../elements/sprites/bulbasaur.png","../elements/sounds/Squirtle-attack-sound.mp3");
+var pikachu = new Pokemon ("pikachu",100,"../elements/sprites/pikachu.png","../elements/sounds/Pikachu-attack-sound.mp3");
+var charmander = new Pokemon("charmander",100,"../elements/sprites/charmander.png","../elements/sounds/Charmander-attack-sound.mp3");
+var bulbasaur = new Pokemon ("bulbasaur",100,"../elements/sprites/squirtle.png","../elements/sounds/Bulbasaur-attack-sound.mp3");
+var squirtle = new Pokemon("squirtle",100,"../elements/sprites/bulbasaur.png","../elements/sounds/Squirtle-attack-sound.mp3");
+
+var pokemons = [pikachu, charmander, squirtle, bulbasaur];

@@ -71,6 +71,11 @@ font-size: 1em;
   border-color: red;
 }
 
+.selected-att {
+  border: solid 2px;
+  border-color: grey;
+}
+
 html,body{
   height: 100%;
 }
@@ -144,6 +149,7 @@ body {
 .hp-bar-fill{
   position: absolute;
   height: 100%;
+  width: 100%;
   border-radius: 20px;
   background: #FF8800;
 }

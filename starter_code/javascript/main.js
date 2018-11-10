@@ -3,22 +3,36 @@ var currentCharIndex = 0;
 var randomIndex = Math.floor(Math.random() * (characters.length));
 var selectedId = "#" + characters[currentCharIndex] + ".characters";
 var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
+// var player1Img;
 var opponentImg = "<img src=" + "..//elements/avatars/" + characters[randomIndex] + ".png />";
-console.log(currentCharIndex);
+// var opponentImg;
+console.log("currentCharIndex is at the start " + currentCharIndex);
 console.log(player1Img);
 console.log(randomIndex);
 console.log(opponentImg);
+var attacksName = ["scratch","kick","smash","charge"];
+var currentAttIndex = 0;
+var randomAttIndex = Math.floor(Math.random() * (characters.length));
+var selectedAtt = "#" + attacksName[currentAttIndex];
+
+// Début du document ready
 
 $(document).ready(function() {
   console.log("ready!");
   
-  $("#chosse-screen").css("display","block");
+// Deux div du jeu : choose-screen et battle-scene
+
+  $("#choose-screen").css("display","block");
   $("#battle-scene").css("display","none");
 
-  $("#pikachu.characters").addClass("selected-char");
+  // Fonction de selection du pokemon
   
+  $("#pikachu.characters").addClass("selected-char");
 
   $(document).keydown(function(event) {
+    if ($("#battle-scene").is(":visible")){
+      return
+    }
     console.log("event initiated");
     switch (event.keyCode) {
       case 37: // left arrow: 37
@@ -32,6 +46,7 @@ $(document).ready(function() {
           $(selectedId).addClass("selected-char");
         }
         currentCharIndex -= 1;
+        player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
         selectedId = "#" + characters[currentCharIndex] + ".characters";
         console.log("selectedId is " + selectedId);
         if ($(selectedId).hasClass("selected-char")) {
@@ -54,6 +69,7 @@ $(document).ready(function() {
           $(selectedId).addClass("selected-char");
         }
         currentCharIndex += 1;
+        player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
         selectedId = "#" + characters[currentCharIndex] + ".characters";
         console.log("selectedId is " + selectedId);
         if ($(selectedId).hasClass("selected-char")) {
@@ -64,18 +80,30 @@ $(document).ready(function() {
         console.log("right arrow clicked");
         console.log("currentCharIndex is " + currentCharIndex);
         break;
-    }
-    console.log("event ended");
-  });
+        
+        case 13 :
+        if ($("#battle-scene").is(":visible")){
+          return
+        } else {
+          $('#player1').html(player1Img);
+          randomSelect();
+          console.log("image of the player is " + player1Img)
+           }
+        }
+    console.log("event ended");        
+    });
 
- $(document).keydown(function(event) {
-var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
- if (event.keyCode === 13) {
-   console.log("image of the player is " + player1Img)
-  $('#player1').html(player1Img);
-   randomSelect();
-  }
-  });
+//  $(document).keydown(function(event) {
+// if ($("#battle-scene").is(":visible")){
+//   return
+// }
+// var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
+//  if (event.keyCode === 13) {
+  //  console.log("image of the player is " + player1Img)
+  // $('#player1').html(player1Img);
+  //  randomSelect();
+  // }
+  // });
 
   // utiliser cette fonction ? ou recalculer le randomindex à chaque fleche dans le switch ???
   // cette fonction pourrait ne servir qu'à l'image de l'opponent
@@ -89,10 +117,10 @@ var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharI
       console.log("image of the oponent is " + opponentImg);
       $('#computer').html(opponentImg);
     }
-    setTimeout (battlescene, 1000);
+    setTimeout (battlescene, 500);
   };
 
-
+// Scène de combat
 
   function battlescene () {
     $("#choose-screen").css("display","none");
@@ -100,5 +128,73 @@ var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharI
     $(".box-bottom-left").html(player1Img)//.addClass('pokemon-bottom');
     $(".box-top-right").html(opponentImg)//.addClass('pokemon-top');
   };
- 
+
+// Fonction de selection de l'attaque
+
+  $("#scratch").addClass("selected-att");
+
+  $(document).keydown(function(event) {
+    if ($("#battle-scene").is(":hidden")){
+      return
+    }
+    console.log("attack event initiated");
+    switch (event.keyCode) {
+      case 37: // left arrow: 37
+        if ( currentAttIndex === 0) {
+          return
+        }
+        selectedAtt = "#" + attacksName[currentAttIndex];
+        if ($(selectedAtt).hasClass("selected-att")) {
+          $(selectedAtt).toggleClass("selected-att");
+        } else {
+          $(selectedAtt).addClass("selected-att");
+        }
+        currentAttIndex -= 1;
+        selectedAtt = "#" + attacksName[currentAttIndex];
+        console.log("selectedAtt is " + selectedAtt);
+        if ($(selectedAtt).hasClass("selected-att")) {
+          $(selectedAtt).toggleClass("selected-att");
+        } else {
+          $(selectedAtt).addClass("selected-att");
+        }
+        console.log("left arrow clicked");
+        console.log("currentAttIndex is " + currentAttIndex);
+        break;
+      
+        case 39: // right arrow = 39
+        if (currentAttIndex === attacksName.length - 1) {
+          return
+        }
+        selectedAtt = "#" + attacksName[currentAttIndex];
+        if ($(selectedAtt).hasClass("selected-att")) {
+          $(selectedAtt).toggleClass("selected-att");
+        } else {
+          $(selectedAtt).addClass("selected-att");
+        }
+        currentAttIndex += 1;
+        selectedAtt = "#" + attacksName[currentAttIndex];
+        console.log("selectedAtt is " + selectedAtt);
+        if ($(selectedAtt).hasClass("selected-att")) {
+          $(selectedAtt).toggleClass("selected-att");
+        } else {
+          $(selectedAtt).addClass("selected-att");
+        }
+        console.log("right arrow clicked");
+        console.log("currentAttIndex is " + currentAttIndex);
+        break;
+      }
+      });
+
+
+// Validation de l'attaque choisie
+
+      $(document).keydown(function(event) {
+        if ($("#battle-scene").is(":hidden")){
+          return
+        }
+         if (event.keyCode === 13) {
+          pokemons[currentCharIndex].attack(pokemons[randomIndex])
+          }
+          });
+
 }); // fin du document.ready
