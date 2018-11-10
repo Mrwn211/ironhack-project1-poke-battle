@@ -9,8 +9,9 @@ function Pokemon(name,health,avatar,sound){
     return name + " has chossen to attack"
   }
 };
-
+// TODO : corriger les hp-points 
 Pokemon.prototype.attack = function(pokemon,hpbar){
+  $(".hp-points").html(pokemon.health);
   var damage = Math.floor(Math.random() * (pokemon.health));
   if (pokemon.health === 1) {
     damage = 1
@@ -23,13 +24,17 @@ Pokemon.prototype.attack = function(pokemon,hpbar){
   console.log(damage,pokemon.health);
   if (pokemon.health > 1){
     console.log(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health);
-    $(".battle-text").html(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health)
+    $(".battle-text").html(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health);
+    $(".hp-points").html(pokemon.health);
 }
   else if (pokemon.health === 0) {
     console.log(pokemon.name + " has lost the battle!");
     $(".battle-text").html(pokemon.name + " has lost the battle!");
+    $(".hp-points").html(pokemon.health);
+
     return
   }
+
 };
 
 // Pokemon Instances
