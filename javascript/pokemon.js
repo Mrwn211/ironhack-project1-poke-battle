@@ -22,6 +22,7 @@ Pokemon.prototype.attack = function(pokemon){
     else if (pokemon.health === 1 ) {
       damage = 1;
       console.log(pokemon.name + "has lost the battle!");
+      $(".battle-text").html(pokemon.name + "has lost the battle!");
     }
     
 };
