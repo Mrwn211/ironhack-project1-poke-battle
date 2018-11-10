@@ -10,7 +10,7 @@ function Pokemon(name,health,avatar,sound){
   }
 };
 
-Pokemon.prototype.attack = function(pokemon){
+Pokemon.prototype.attack = function(pokemon,hpbar){
   var damage = Math.floor(Math.random() * (pokemon.health));
   if (pokemon.health === 1) {
     damage = 1
@@ -18,6 +18,8 @@ Pokemon.prototype.attack = function(pokemon){
   pokemon.health -= damage;
   var audio = new Audio(this.sound);
   audio.play(); 
+  console.log(hpbar)
+  hpbar[0].style.width = pokemon.health + "%"
   console.log(damage,pokemon.health);
   if (pokemon.health > 1){
     console.log(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health);

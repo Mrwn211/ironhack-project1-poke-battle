@@ -207,9 +207,9 @@ $(document).ready(function() {
       return;
     }
     if (event.keyCode === 13) {
-      pokemons[currentCharIndex].attack(pokemons[randomIndex]);
+      pokemons[currentCharIndex].attack(pokemons[randomIndex], $('.hp-bar-top .hp-bar-fill'));
       setTimeout(function() {
-        pokemons[randomIndex].attack(pokemons[currentCharIndex]);
+        pokemons[randomIndex].attack(pokemons[currentCharIndex],$('.hp-bar-bottom .hp-bar-fill'));
       }, 2000);
     }
   });
