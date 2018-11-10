@@ -17,6 +17,7 @@ Pokemon.prototype.attack = function(pokemon){
   audio.play(); 
   if (pokemon.health > 1){
     console.log(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health);
+    $(".battle-text").html(pokemon.name + " has received " + damage + " points of damage!" + "HP remaining " + pokemon.health)
 }
     else if (pokemon.health === 1 ) {
       damage = 1;
