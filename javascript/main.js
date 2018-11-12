@@ -7,14 +7,8 @@ var player1Img =
   "./elements/avatars/" +
   characters[currentCharIndex] +
   ".png />";
-// var player1Img;
 var opponentImg =
   "<img src=" + "./elements/avatars/" + characters[randomIndex] + ".png />";
-// var opponentImg;
-console.log("currentCharIndex is at the start " + currentCharIndex);
-console.log(player1Img);
-console.log(randomIndex);
-console.log(opponentImg);
 var attacksName = ["scratch", "kick", "smash", "charge"];
 var currentAttIndex = 0;
 var randomAttIndex = Math.floor(Math.random() * characters.length);
@@ -23,7 +17,6 @@ var selectedAtt = "#" + attacksName[currentAttIndex];
 // Début du document ready
 
 $(document).ready(function() {
-  console.log("ready!");
 
   // Deux div du jeu : choose-screen et battle-scene
 
@@ -38,7 +31,6 @@ $(document).ready(function() {
     if ($("#battle-scene").is(":visible")) {
       return;
     }
-    console.log("event initiated");
     switch (event.keyCode) {
       case 37: // left arrow: 37
         if (currentCharIndex === 0) {
@@ -105,18 +97,6 @@ $(document).ready(function() {
     }
     console.log("event ended");
   });
-
-  //  $(document).keydown(function(event) {
-  // if ($("#battle-scene").is(":visible")){
-  //   return
-  // }
-  // var player1Img = "<img src=" + "..//elements/avatars/" + characters[currentCharIndex] + ".png />";
-  //  if (event.keyCode === 13) {
-  //  console.log("image of the player is " + player1Img)
-  // $('#player1').html(player1Img);
-  //  randomSelect();
-  // }
-  // });
 
   // utiliser cette fonction ? ou recalculer le randomindex à chaque fleche dans le switch ???
   // cette fonction pourrait ne servir qu'à l'image de l'opponent

@@ -9,12 +9,7 @@ function Pokemon(name, health, avatar, sound) {
     return name + " has choosen to attack";
   };
 }
-// TODO : corriger les hp-points
-Pokemon.prototype.attack = function(pokemon, hpbar, hppoints) {
-  $(".hp-points").html(pokemon.health);
-  // $(".top-hp-points").html(pokemon[randomIndex].health);
-  // $(".bottom-hp-points").html(pokemon[currentCharIndex].health);
-
+Pokemon.prototype.attack = function(pokemon, hpbar) {
   var damage = Math.floor(Math.random() * pokemon.health);
   if (pokemon.health === 1) {
     damage = 1;
@@ -40,16 +35,9 @@ Pokemon.prototype.attack = function(pokemon, hpbar, hppoints) {
         "HP remaining " +
         pokemon.health
     );
-    $(".hp-points").html(pokemon.health);
-    // $(".top-hp-points").html(pokemon[randomIndex].health);
-    // $(".bottom-hp-points").html(pokemon[currentCharIndex].health);
   } else if (pokemon.health === 0) {
     console.log(pokemon.name + " has lost the battle!");
     $(".battle-text").html(pokemon.name + " has lost the battle!");
-    $(".hp-points").html(pokemon.health);
-    // $(".top-hp-points").html(pokemon[randomIndex].health);
-    // $(".bottom-hp-points").html(pokemon[currentCharIndex].health);
-
     return;
   }
 };
