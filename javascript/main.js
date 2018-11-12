@@ -140,6 +140,8 @@ $(document).ready(function() {
     $("#battle-scene").css("display", "block");
     $(".box-bottom-left").html(player1Img); //.addClass('pokemon-bottom');
     $(".box-top-right").html(opponentImg); //.addClass('pokemon-top');
+    $(".top-hp-points").html(pokemons[randomIndex].health);
+    $(".bottom-hp-points").html(pokemons[currentCharIndex].health);
   }
 
   // Fonction de selection de l'attaque
@@ -206,10 +208,15 @@ $(document).ready(function() {
     if ($("#battle-scene").is(":hidden")) {
       return;
     }
+
     if (event.keyCode === 13) {
       pokemons[currentCharIndex].attack(pokemons[randomIndex], $('.hp-bar-top .hp-bar-fill'));
+      $(".top-hp-points").html(pokemons[randomIndex].health);
+
       setTimeout(function() {
         pokemons[randomIndex].attack(pokemons[currentCharIndex],$('.hp-bar-bottom .hp-bar-fill'));
+        $(".bottom-hp-points").html(pokemons[currentCharIndex].health);
+
       }, 2000);
     }
   });
