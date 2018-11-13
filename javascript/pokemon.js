@@ -5,8 +5,6 @@ function Pokemon(name, health, avatar, sound) {
   this.avatar = avatar;
   this.sound = sound;
   this.attackCry = function() {
-    // Specify the attack ??
-    return name + " has choosen to attack";
   };
 }
 Pokemon.prototype.attack = function(pokemon, hpbar) {
