@@ -24,16 +24,16 @@ Pokemon.prototype.attack = function(pokemon, hpbar) {
         " has received " +
         damage +
         " points of damage!" +
-        "HP remaining " +
-        pokemon.health
+        "HP remaining : " +
+        pokemon.health + "pt"
     );
     $(".battle-text").html(
       pokemon.name +
         " has received " +
         damage +
         " points of damage!" +
-        "HP remaining " +
-        pokemon.health
+        "HP remaining : " +
+        pokemon.health + "pt"
     );
   } else if (pokemon.health === 0) {
     console.log(pokemon.name + " has lost the battle!");

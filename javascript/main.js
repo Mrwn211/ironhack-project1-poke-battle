@@ -17,7 +17,6 @@ var selectedAtt = "#" + attacksName[currentAttIndex];
 // Début du document ready
 
 $(document).ready(function() {
-
   // Deux div du jeu : choose-screen et battle-scene
 
   $("#choose-screen").css("display", "block");
@@ -190,13 +189,26 @@ $(document).ready(function() {
     }
 
     if (event.keyCode === 13) {
-      pokemons[currentCharIndex].attack(pokemons[randomIndex], $('.hp-bar-top .hp-bar-fill'));
+      if (pokemons[randomIndex].health == 0) {
+        $(".battle-text").html(pokemons[randomIndex] + " is already down !");
+        return; // stop the attack if coputer has lost
+      }
+      else {pokemons[currentCharIndex].attack(
+        pokemons[randomIndex],
+        $(".hp-bar-top .hp-bar-fill")
+      );}
       $(".top-hp-points").html(pokemons[randomIndex].health);
 
       setTimeout(function() {
-        pokemons[randomIndex].attack(pokemons[currentCharIndex],$('.hp-bar-bottom .hp-bar-fill'));
-        $(".bottom-hp-points").html(pokemons[currentCharIndex].health);
-
+        if (pokemons[currentCharIndex].health == 0) {
+          $(".battle-text").html(pokemons[currentCharIndex] + " is already down !");
+          return; // stop the attack if player one has lost
+        }
+        else {pokemons[randomIndex].attack(
+          pokemons[currentCharIndex],
+          $(".hp-bar-bottom .hp-bar-fill")
+        );
+        $(".bottom-hp-points").html(pokemons[currentCharIndex].health);}
       }, 2000);
     }
   });
